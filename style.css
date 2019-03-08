@@ -1,0 +1,225 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: roboto;
+}
+
+header{
+    width: 100%;
+    height: 100vh;
+    background: #ffffff;
+}
+
+.container_header{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+nav{
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45%;
+    height: 10vh;
+    
+}
+
+nav ul{
+    display: flex;
+    width: 90%;
+}
+
+nav ul li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1vh 2vh 1vh 1vh;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: #333333;
+}
+
+.active *{
+    color: white;
+    background: rgb(102, 162, 202);
+    border-radius: 100px;
+    padding: 1vh 2vh;
+}
+
+.text{
+    position: absolute;
+    z-index: 1;
+    width: 50%; 
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.container_text{
+    position: relative;
+    top: 20%;
+    left: 10%;
+    width: 80%;
+}
+
+.col1{
+    position: relative;
+    width: 80%;
+    font-size: 2.5em;
+    display: flex;
+    align-items: center;
+}
+
+.col1 *{
+    font-weight: 300;
+    color: #333333; 
+}
+
+.col2{
+    margin-top: 1vh;
+    position: relative;
+    width: 80%;
+    display: flex;
+    align-items: center;
+}
+
+.col3{
+    margin-top: 5vh;
+    position: relative;
+    width: 80%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.kotak{
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #bc382e;
+    width: 150px;
+    height: 150px;
+    margin: 1vh;
+    cursor: pointer;
+    position: relative;
+}
+
+.kotak_show{
+    width: 100%;
+    height: 100%;
+    background: #333333;
+    position: absolute;
+    z-index: 100;
+    display: none
+}
+
+.kotak_show.true{
+    display: flex;
+}
+
+.kotak::after{
+    content: "...";
+    font-size: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.kotak:hover:after{
+    opacity: 1;
+}
+
+.kotak img{
+    width: auto;
+    height: 100%;
+}
+
+.bg{
+    z-index: 2; 
+    position: fixed;
+    width: 70%;
+    height: 80%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-clip-path: polygon(100% 0%, 100% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+    clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 0% 100%, 20% 0%, 0% 0%);
+    right: 0;
+    background: url(Kosaki/1.jpg);
+    background-size: cover;
+    background-position-y: center;
+    background-position-x: left;
+}
+
+
+@media only screen and (max-width: 992px){
+    .bg{
+        display: flex;
+        position: fixed;
+        z-index: 0;
+        width: 100%;
+        height: 80%;
+        opacity: 0.1;
+    }
+
+    nav{
+        width: 100%;
+        height: 10vh;
+        position: relative;
+        margin-bottom: 2vh;
+        background: #ffffff;
+    }
+
+    nav ul{
+        justify-content: center;
+        align-items: center;
+    }
+
+    .text{
+        width: 100%;
+        position: relative;
+        background: transparent;
+    }
+
+    .container_text{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        position: relative;
+        left: 0;
+        top: 0;
+    }
+
+    .col1, .col2, .col3{
+        justify-content: center;
+    }
+
+    .container_header{
+        overflow: visible;
+        flex-direction: column;
+    }
+
+}
